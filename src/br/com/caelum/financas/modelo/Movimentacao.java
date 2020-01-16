@@ -41,7 +41,7 @@ public class Movimentacao {
 	@OneToMany
 	public Categoria categoria;
 
-	public void insereMovimentacao(BigDecimal valor, tipoMovimentacao tipo, Calendar data, String descricao,  Conta conta) {
+	public void insereMovimentacao(BigDecimal valor, tipoMovimentacao tipo, Calendar data, String descricao,  Conta conta, Categoria categoria) {
 		
 		Movimentacao movimentacao = new Movimentacao();
 		
@@ -50,8 +50,10 @@ public class Movimentacao {
 		movimentacao.data = data;
 		movimentacao.descricao = descricao;
 		//movimentacao.conta= id_conta;
-		
+				
 		movimentacao.conta = conta;
+		
+		movimentacao.categoria = categoria;
 		
 		EntityManager em = new JPAUtil().getEntityManager();
         em.getTransaction().begin();
