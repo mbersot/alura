@@ -14,21 +14,22 @@ public class Categoria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer id;
-	public String texto;
+	public String nome;
 	
 	
-	public Categoria insereCategoria(String texto){
+	
+	public Categoria insereCategoria(String nome){
 		
 		Categoria categoria = new Categoria();
 		
-		categoria.texto = texto;
+		categoria.nome = nome;
 		
 		EntityManager em = new JPAUtil().getEntityManager();
         em.getTransaction().begin();
         em.persist(categoria);
         em.getTransaction().commit();
         
-     em.close();
+        em.close();
      
      return categoria;
 		
