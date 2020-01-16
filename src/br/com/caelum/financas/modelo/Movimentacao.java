@@ -1,20 +1,10 @@
 package br.com.caelum.financas.modelo;
 
+
 import java.math.BigDecimal;
 import java.util.Calendar;
-
-import javax.persistence.Entity;
-import javax.persistence.EntityManager;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
+import java.util.List;
+import javax.persistence.*;
 import br.com.caelum.financas.util.JPAUtil;
 
 
@@ -30,7 +20,7 @@ public class Movimentacao {
 	@Enumerated(EnumType.STRING)
 	public tipoMovimentacao tipo;
 	
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	public Calendar data;
 	
 	public String descricao;
@@ -39,9 +29,9 @@ public class Movimentacao {
 	public Conta conta;
 	
 	@OneToMany
-	public Categoria categoria;
+	public List<Categoria> categorias;
 
-	public void insereMovimentacao(BigDecimal valor, tipoMovimentacao tipo, Calendar data, String descricao,  Conta conta, Categoria categoria) {
+	public void insereMovimentacao(BigDecimal valor, tipoMovimentacao tipo, Calendar data, String descricao,  Conta conta, List<Categoria> categoria) {
 		
 		Movimentacao movimentacao = new Movimentacao();
 		
@@ -53,8 +43,7 @@ public class Movimentacao {
 				
 		movimentacao.conta = conta;
 		
-		movimentacao.categoria = categoria;
-		
+		movimentacao.categorias = categoria;
 		EntityManager em = new JPAUtil().getEntityManager();
         em.getTransaction().begin();
         em.persist(movimentacao);

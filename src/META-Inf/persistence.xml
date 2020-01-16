@@ -13,6 +13,9 @@
         <!-- Aqui são listadas todas as entidades -->
         <class>br.com.caelum.financas.modelo.Conta</class>
 		<class>br.com.caelum.financas.modelo.Movimentacao</class>
+		<class>br.com.caelum.financas.modelo.Cliente</class>
+		<class>br.com.caelum.financas.modelo.Categoria</class>
+		<class>br.com.caelum.financas.modelo.Movimentacao_Categoria</class>
 
         <properties>    
             <!-- Propriedades JDBC -->

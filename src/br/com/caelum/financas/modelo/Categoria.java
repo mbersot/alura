@@ -12,7 +12,7 @@ import br.com.caelum.financas.util.JPAUtil;
 public class Categoria {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Integer id;
 	public String nome;
 	
