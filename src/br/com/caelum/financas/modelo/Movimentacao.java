@@ -14,21 +14,21 @@ public class Movimentacao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer id;
-	
+
 	public BigDecimal valor;
-	
+
 	@Enumerated(EnumType.STRING)
-	public tipoMovimentacao tipo;
-	
+	public tipoMovimentacao TipoMovimentacao;
+
 	@Temporal(TemporalType.DATE)
 	public Calendar data;
-	
+
 	public String descricao;
-	
+
 	@ManyToOne
 	public Conta conta;
-	
-	@OneToMany
+
+	@ManyToMany
 	public List<Categoria> categorias;
 
 	public void insereMovimentacao(BigDecimal valor, tipoMovimentacao tipo, Calendar data, String descricao,  Conta conta, List<Categoria> categoria) {
@@ -36,7 +36,7 @@ public class Movimentacao {
 		Movimentacao movimentacao = new Movimentacao();
 		
 		movimentacao.valor = valor;
-		movimentacao.tipo = tipo;
+		movimentacao.TipoMovimentacao = tipo;
 		movimentacao.data = data;
 		movimentacao.descricao = descricao;
 		//movimentacao.conta= id_conta;

@@ -15,7 +15,7 @@ public class PopulaMovimentacaosComCategoria {
 		
 		Categoria categoria1 = new Categoria();
 		Categoria resultCategoria1 = categoria1.insereCategoria("Viagem");
-		Categoria categoria2 = new Categoria();
+	    Categoria categoria2 = new Categoria();
 		Categoria resultCategoria2 = categoria2.insereCategoria("Negocios");
 		
 		Conta conta = new Conta();

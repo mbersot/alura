@@ -7,9 +7,10 @@ public class PopulaConta {
   public static void main(String[] args) {
 
 		Conta salva = new Conta();
-		salva.insereConta("443 - BANCO DO ESTADO", "1888-3", "00011", "Marcus Bersot");
-		salva.insereConta("237 - BANCO BANESTADO", "67896-1", "00012", "Felipe Santos");
-		salva.insereConta("341 - BANCO BAMERINDOS", "12345-3", "00013", "Maria Gabriela");
+		
+		salva.insereConta("Caixa Economica Federal", "123456-8", "0003-4");
+		salva.insereConta("Bradesco", "987456-1", "0001-4");
+		salva.insereConta("Bamerindus", "561234-1", "0002-4");
 		
 	}
 }

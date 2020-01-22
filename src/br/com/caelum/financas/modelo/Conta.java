@@ -14,19 +14,17 @@ public class Conta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer id;
-    public String titular;
     public String banco; 
     public String agencia;
     public String numero;
         
-    public Conta insereConta(String banco, String numero, String agencia, String titular) {
+    public Conta insereConta(String banco, String numero, String agencia) {
    		Conta conta = new Conta();
    		
    		conta.banco = banco;
    		conta.numero = numero;
    		conta.agencia = agencia;
-   		conta.titular = titular;
-   		
+   	   		
    		EntityManager em = new JPAUtil().getEntityManager();
            em.getTransaction().begin();
            em.persist(conta);
@@ -52,6 +50,8 @@ public class Conta {
 	
 	
 	}
+
+	
 	
 }
 

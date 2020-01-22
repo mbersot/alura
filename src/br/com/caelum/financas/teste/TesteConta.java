@@ -9,7 +9,6 @@ public class TesteConta {
     public static void main(String[] args) {
 
         Conta conta = new Conta();
-        conta.titular = "Marcus Bersot";
         conta.banco = "Banco do Brasil";
         conta.agencia = "0001";
         conta.numero = "1855";
